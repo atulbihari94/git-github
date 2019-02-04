@@ -247,20 +247,20 @@ var var2=arr.col;
 if((var1>1 && var1<15) && (var2>1&&var2<10))
 {
     var a=var1;
-    var b=var2-1;//a+b
+    var b=var2-1;//a+b 
     var c=var2+1;//a+c
     var d=var2;
     //var e=var1-1;//d+e
     //var f=var1+1;//d+f
     //var g=f-1;
-    document.getElementById(""+a+b).style.background='green';
-    document.getElementById(""+a+c).style.background='green';
+    ///document.getElementById(""+a+b).style.background='green';
+    ///document.getElementById(""+a+c).style.background='green';
    //document.getElementById(""+d+e).style.background='green';
     //document.getElementById(""+d+f).style.background='green';
 }
 //change
-        document.getElementById(""+arr.row+arr.col).innerHTML="";
-        document.getElementById(""+arr.row+arr.col).style.background='red';
+       /// document.getElementById(""+arr.row+arr.col).innerHTML="";
+        ///document.getElementById(""+arr.row+arr.col).style.background='red';
     } while (count > 0);
    //table.sort((a, b) => a.row == b.row ? a.col - b.col : a.row - b.row)
 
@@ -272,13 +272,170 @@ if((var1>1 && var1<15) && (var2>1&&var2<10))
 var mine = []
     for (let a of array) 
     {
-        var p = (a.row - 1) * 10 + a.col
-        mine.push(p);
-        //console.log('after push');
-        //console.log(p);
+      if(a.row==1)
+      {
+        if(col==1)
+        {
+        var p4 = (a.row + 1) * 10 + a.col;
+        var p6=p4+1;
+        var p8 = (a.row*10)+(a.col+1);
+        mine.push(p4);
+        mine.push(p6);
+        mine.push(p8);
+        console.log('after push row==1 left top corner');
+        console.log(p4);
+        console.log(p6);
+        console.log(p7);
+        }
+        else if(col==10)
+        {
+        var p4 = (a.row + 1) * 10 + a.col;
+        var p5=p4-1;
+        var p7 = (a.row*10)+(a.col-1);
+        mine.push(p4);
+        mine.push(p5);
+        mine.push(p7);
+        console.log('after push row==1 right top corner');
+        console.log(p4);
+        console.log(p5);
+        console.log(p7);  
+        }
+        else
+        {
+        var p4 = (a.row + 1) * 10 + a.col;
+        var p5=p4-1;
+        var p6=p4+1;
+        var p7 = (a.row*10)+(a.col-1);
+        var p8 = (a.row*10)+(a.col+1);
+        mine.push(p4);
+        mine.push(p5);
+        mine.push(p6);
+        mine.push(p7);
+        mine.push(p8);
+        console.log('after push row==1');
+        console.log(p4);
+        console.log(p5);
+        console.log(p6);
+        console.log(p7);
+        console.log(p8);
+        }
+      }
 
+      else if(a.row==15)
+      {
+        if(a.col==1)
+        {
+        var p1 = (a.row - 1) * 10 + a.col;
+        var p3=p1+1;
+        var p8 = (a.row*10)+(a.col+1);
+        mine.push(p1);
+        mine.push(p3);
+        mine.push(p8);
+        console.log('after push row==15 buttom left corner');
+        console.log(p1);
+        console.log(p3);
+        console.log(p8);
+        }
+        else if(a.col=10)
+        {
+        var p1 = (a.row - 1) * 10 + a.col;
+        var p2=p1-1;
+        var p7 = (a.row*10)+(a.col-1);
+        mine.push(p1);
+        mine.push(p2);
+        mine.push(p7);
+        console.log('after push row==15 button right corner');
+        console.log(p1);
+        console.log(p2);
+        console.log(p7);
+        }
+        else
+        {
+        var p1 = (a.row - 1) * 10 + a.col;
+        var p2=p1-1;
+        var p3=p1+1;
+        var p7 = (a.row*10)+(a.col-1);
+        var p8 = (a.row*10)+(a.col+1);
+        mine.push(p1);
+        mine.push(p2);
+        mine.push(p3);
+        mine.push(p7);
+        mine.push(p8);
+        console.log('after push row==15');
+        console.log(p1);
+        console.log(p2);
+        console.log(p3);
+        console.log(p7);
+        console.log(p8);
+        }
+      }
+      else if(a.col==1)
+      {
+        var p1 = (a.row - 1) * 10 + a.col;
+        var p3=p1+1;
+        var p4 = (a.row + 1) * 10 + a.col;
+        var p6=p4+1;
+        var p8 = (a.row*10)+(a.col+1);
+        mine.push(p1);
+        mine.push(p3);
+        mine.push(p4);
+        mine.push(p6);
+        mine.push(p8);
+        console.log('after push col==1');
+        console.log(p1);
+        console.log(p3);
+        console.log(p4);
+        console.log(p6);
+        console.log(p8);
+      }
+      else if(a.col==10)
+      {
+        var p1 = (a.row - 1) * 10 + a.col;
+        var p2=p1-1;
+        var p4 = (a.row + 1) * 10 + a.col;
+        var p5=p4-1;
+        var p7 = (a.row*10)+(a.col-1);
+        mine.push(p1);
+        mine.push(p2);
+        mine.push(p4);
+        mine.push(p5);
+        mine.push(p7);
+        console.log('after push col==10');
+        console.log(p1);
+        console.log(p2);
+        console.log(p4);
+        console.log(p5);
+        console.log(p7);
+      }
+      else{
+        var p1 = (a.row - 1) * 10 + a.col;
+        var p2=p1-1;
+        var p3=p1+1;
+        var p4 = (a.row + 1) * 10 + a.col;
+        var p5=p4-1;
+        var p6=p4+1;
+        var p7 = (a.row*10)+(a.col-1);
+        var p8 = (a.row*10)+(a.col+1);
+        mine.push(p1);
+        mine.push(p2);
+        mine.push(p3);
+        mine.push(p4);
+        mine.push(p5);
+        mine.push(p6);
+        mine.push(p7);
+        mine.push(p8);
+        console.log('after push');
+        console.log(p1);
+        console.log(p2);
+        console.log(p3);
+        console.log(p4);
+        console.log(p5);
+        console.log(p6);
+        console.log(p7);
+        console.log(p8);
+       
         //for neighbour
-
+      }
     }
 </script>
 </body>
