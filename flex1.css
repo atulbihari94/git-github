@@ -1,0 +1,38 @@
+
+.flex-container {
+  display: flex;
+  background-color: yellow;
+  width:520px;
+  boarder:3px;
+}
+.flex-container > div {
+  background-color:gray;
+  color:gray;
+  width: 40px;
+  height:30px;
+  margin: 5px;
+  text-align:center;
+  border-radius: 15px;
+  font-size: 30px; 
+}
+.flex-container > div.pressed {
+                background-color: black;
+            }
+			
+.flex-container1{
+  display: flex;
+  width:520px;
+  background-color: green;
+}
+
+.flex-container1 > div {
+  background-color: #f1f1f1;
+  width: 140px;
+  margin: 10px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12 px;
+  border-radius: 20px;
+}
+
+</style>
